@@ -9,6 +9,9 @@ const AccountMonetizeSettings = lazy(
 const AccountPersonalizeSettings = lazy(
   () => import("@/components/Settings/Personalize")
 );
+const AccountRecoverySettings = lazy(
+  () => import("@/components/Settings/Recovery")
+);
 const AccountSettings = lazy(() => import("@/components/Settings"));
 const BlockedSettings = lazy(() => import("@/components/Settings/Blocked"));
 const Bookmarks = lazy(() => import("@/components/Bookmarks"));
@@ -21,6 +24,9 @@ const GroupMonetizeSettings = lazy(
 );
 const GroupPersonalizeSettings = lazy(
   () => import("@/components/Group/Settings/Personalize")
+);
+const GroupRecoverySettings = lazy(
+  () => import("@/components/Group/Settings/Recovery")
 );
 const GroupSettings = lazy(() => import("@/components/Group/Settings"));
 const Groups = lazy(() => import("@/components/Groups"));
@@ -62,6 +68,7 @@ const Routes = () => {
                   element={<GroupPersonalizeSettings />}
                   path="personalize"
                 />
+                  <Route element={<GroupRecoverySettings />} path="recovery" />
                 <Route element={<GroupMonetizeSettings />} path="monetize" />
                 <Route element={<RulesSettings />} path="rules" />
               </Route>
@@ -76,6 +83,7 @@ const Routes = () => {
                 element={<AccountPersonalizeSettings />}
                 path="personalize"
               />
+              <Route element={<AccountRecoverySettings />} path="recovery" />
               <Route element={<AccountMonetizeSettings />} path="monetize" />
               <Route element={<RewardsSettings />} path="rewards" />
               <Route element={<BlockedSettings />} path="blocked" />
